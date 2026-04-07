@@ -11,7 +11,7 @@ export default function Navbar({ menuItems, activeMenu, setActiveMenu }) {
 
   return (
     <nav className="bg-gray-100 w-full shadow flex justify-between items-center px-4">
-          <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-4">
         <span className="text-sm font-semibold">IMP-PRIME-TSD</span>
         <button
           id="logout-button"
@@ -40,7 +40,7 @@ export default function Navbar({ menuItems, activeMenu, setActiveMenu }) {
         ))}
       </div>
 
-    
+
 
     </nav>
   );

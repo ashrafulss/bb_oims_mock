@@ -13,7 +13,7 @@ export default function Login() {
     if (userName === "user" && password === "user") {
       localStorage.setItem("isLoggedIn", "true");
       setIsWrongCredential(false);
-      navigate("/home"); 
+      navigate("/home");
     } else {
       setIsWrongCredential(true);
       setErrorMessage("Invalid credential!");
@@ -22,7 +22,7 @@ export default function Login() {
 
   return (
     <div className="flex flex-col items-center">
-      {/* Logo */}
+
       <div className="flex justify-center">
         <img
           src={BBLogo}
@@ -31,7 +31,6 @@ export default function Login() {
         />
       </div>
 
-      {/* Title */}
       <div className="flex flex-col items-center text-center mb-10">
         <span className="text-green-900 font-bold text-[18px]">
           Bangladesh Bank
@@ -41,13 +40,12 @@ export default function Login() {
         </span>
       </div>
 
-      {/* Login Box */}
       <div className="border border-black p-2 w-[530px]">
         <div className="border border-black">
           <p className="bg-[#0066B2] text-white text-[14px] p-[2px]">Login</p>
 
           <div className="pl-3 pt-1">
-            {/* Username */}
+
             <div className="p-1 text-[12px] flex gap-1 items-center">
               <label className="underline w-[80px]">Username</label>
               <input
@@ -59,7 +57,6 @@ export default function Login() {
               />
             </div>
 
-            {/* Password */}
             <div className="p-1 text-[12px] flex gap-1 items-center">
               <label className="underline w-[80px]">Password</label>
               <input
@@ -70,7 +67,7 @@ export default function Login() {
                 className="h-[20px] w-[300px] p-1 border border-black"
               />
               <button
-              id="login-button"
+                id="login-button"
                 onClick={onLogin}
                 className="font-bold text-white bg-[#0066B2] px-2 border-l-[2px] border-l-[#AAAAAA]
                           border-t-[2px] border-t-[#AAAAAA]
@@ -89,7 +86,6 @@ export default function Login() {
           </div>
         </div>
 
-        {/* Info Section */}
         <div className="text-[12px] flex flex-col gap-2 pt-2">
           <p className="text-[#008000]">
             If you know your Password but your User ID is LOCKED then try again

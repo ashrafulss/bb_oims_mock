@@ -9,7 +9,7 @@ const MenuBar = ({ menuItems, activeItem, setActiveItem }) => {
             <button
               key={item.id}
               id={item.id}
-              onClick={() => setActiveItem(item.id)} // <- use Home's state
+              onClick={() => setActiveItem(item.id)} 
               className={`text-xs px-2 py-1 whitespace-nowrap
                 ${activeItem === item.id
                   ? "text-white font-semibold"

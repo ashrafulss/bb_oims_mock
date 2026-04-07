@@ -61,12 +61,12 @@ export default function ReportsComponent({ onSelectReport }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto ">
-      {/* Title */}
+
       <h1 className="font-bold border-b border-gray-400  mb-1">
         Import Reports
       </h1>
 
-     
+
       <button
         onClick={() => navigate(-1)}
         className="bg-blue-800 font-semibold text-white px-4 py-1 ml-5 mb-5 hover:text-yellow-600"
@@ -74,20 +74,18 @@ export default function ReportsComponent({ onSelectReport }) {
         Back
       </button>
 
-      {/* Section Title */}
       <h2 className=" font-semibold bg-blue-800 text-white px-2 py-1 mb-4 hover:text-yellow-600">
         Foreign Import Reports
       </h2>
 
-<div>
-          {reportsList.map((report) => (
+      <div>
+        {reportsList.map((report) => (
           <button
             key={report.id}
             id={report.id}
-           onClick={() => {
-            console.log(report,'-------------')
-            onSelectReport(report)
-           }}
+            onClick={() => {
+              onSelectReport(report)
+            }}
             className="flex items-center justify-start  "
           >
             <span className="mr-2 ">{report.sl}.</span>
@@ -97,7 +95,7 @@ export default function ReportsComponent({ onSelectReport }) {
             )}
           </button>
         ))}
-</div>
+      </div>
 
 
     </div>
