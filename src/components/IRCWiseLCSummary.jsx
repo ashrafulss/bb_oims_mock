@@ -24,8 +24,6 @@ const IRCWiseLCSummary = () => {
 
     const results = reportData.filter((item) => {
       const matchesYear = item.financialYear === formData.year;
-
-
       const searchLower = formData.searchValue.toLowerCase();
       const matchesSearch = formData.searchType === "irc"
         ? item.ircNo.includes(formData.searchValue)
