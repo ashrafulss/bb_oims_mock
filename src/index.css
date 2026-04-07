@@ -5,4 +5,6 @@
 /* src/index.css */
 body {
   font-family: Arial, Helvetica, Geneva, sans-serif;
+   @apply text-xs; 
 }
+

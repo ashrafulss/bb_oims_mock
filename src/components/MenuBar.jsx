@@ -13,7 +13,7 @@ const MenuBar = ({ menuItems, activeItem, setActiveItem }) => {
               className={`text-xs px-2 py-1 whitespace-nowrap
                 ${activeItem === item.id
                   ? "text-white font-semibold"
-                  : "text-white hover:text-yellow-300"
+                  : "text-white hover:text-yellow-600"
                 }
               `}
             >
