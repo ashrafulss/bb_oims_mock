@@ -54,12 +54,9 @@ const reportsList = [
 ];
 
 
-  const handleReportClick = (reportId) => {
-    console.log("Clicked report ID:", reportId);
-   
-  };
 
-export default function ReportsComponent() {
+
+export default function ReportsComponent({ onSelectReport }) {
   const navigate = useNavigate();
 
   return (
@@ -87,7 +84,10 @@ export default function ReportsComponent() {
           <button
             key={report.id}
             id={report.id}
-            onClick={() => handleReportClick(report)}
+           onClick={() => {
+            console.log(report,'-------------')
+            onSelectReport(report)
+           }}
             className="flex items-center justify-start  "
           >
             <span className="mr-2 ">{report.sl}.</span>

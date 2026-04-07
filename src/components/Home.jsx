@@ -7,6 +7,7 @@ import MenuBar from "./MenuBar";
 import { useState, useEffect } from "react";
 import  HomeComponent from "./sub-menu-component/HomeComponent";
 import ReportsComponent from "./sub-menu-component/ReportsComponent";
+import IRCWiseLCSummary from "./IRCWiseLCSummary";
 
 
 
@@ -67,11 +68,36 @@ export default function Home() {
 
 
     const renderMenuContent = () => {
+
+         if (selectedReport) {
+    switch (selectedReport.id) {
+      case "financial-year-wise-lc":
+        return (
+          <IRCWiseLCSummary 
+            report={selectedReport} 
+            onBack={() => setSelectedReport(null)} 
+          />
+        );
+
+      default:
+        return <div>Unknown Report Type</div>;
+    }
+  }
+
+        //    if (selectedReport) {
+        //     return (
+        //         <IRCWiseLCSummary 
+        //             report={selectedReport} 
+        //             onBack={() => setSelectedReport(null)} 
+        //         />
+        //     );
+        // }
+
     switch (activeMenuBar) {
       case "home":
         return <HomeComponent />;
       case "reports":
-        return <ReportsComponent />;
+        return <ReportsComponent onSelectReport={setSelectedReport}/>;
               case "transactions":
         return <div>Transactions Component</div>;
       case "certificate":
@@ -90,6 +116,12 @@ export default function Home() {
         return null;
     }
   };
+const [selectedReport, setSelectedReport] = useState(null);
+
+    // Reset the selected report if the user clicks a different tab in the MenuBar
+    useEffect(() => {
+        setSelectedReport(null);
+    }, [activeMenuBar]);
 
 
     return (
