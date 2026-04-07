@@ -1,8 +1,6 @@
 import React from "react";
 
-const MenuBar = ({ menuItems, defaultActive = "home" }) => {
-  const [active, setActive] = React.useState(defaultActive);
-
+const MenuBar = ({ menuItems, activeItem, setActiveItem }) => {
   return (
     <nav className="bg-blue-800 w-full">
       <div className="flex items-center px-2 overflow-x-auto">
@@ -11,9 +9,9 @@ const MenuBar = ({ menuItems, defaultActive = "home" }) => {
             <button
               key={item.id}
               id={item.id}
-              onClick={() => setActive(item.id)}
+              onClick={() => setActiveItem(item.id)} // <- use Home's state
               className={`text-xs px-2 py-1 whitespace-nowrap
-                ${active === item.id
+                ${activeItem === item.id
                   ? "text-white font-semibold"
                   : "text-white hover:text-yellow-300"
                 }

@@ -5,6 +5,9 @@ import Navbar from '../components/Navbar';
 import NoticeCard from '../components/NoticeCard';
 import MenuBar from "./MenuBar";
 import { useState, useEffect } from "react";
+import  HomeComponent from "./sub-menu-component/HomeComponent";
+import ReportsComponent from "./sub-menu-component/ReportsComponent";
+
 
 
 const menuBarItems = {
@@ -55,10 +58,38 @@ export default function Home() {
     useEffect(() => {
         if (activeNavbar === "import") {
             setActiveMenuBar(menuBarItems.import[0].id); 
+      
         } else {
             setActiveMenuBar(null);
         }
     }, [activeNavbar]);
+
+
+
+    const renderMenuContent = () => {
+    switch (activeMenuBar) {
+      case "home":
+        return <HomeComponent />;
+      case "reports":
+        return <ReportsComponent />;
+              case "transactions":
+        return <div>Transactions Component</div>;
+      case "certificate":
+        return <div>Certificate Component</div>;
+      case "statement":
+        return <div>Statement Component</div>;
+      case "faq":
+        return <div>FAQ Component</div>;
+      case "ads-info":
+        return <div>AD's Information Component</div>;
+      case "contact":
+        return <div>My Contact Component</div>;
+      case "change-password":
+        return <div>Change Password Component</div>;
+      default:
+        return null;
+    }
+  };
 
 
     return (
@@ -96,6 +127,10 @@ export default function Home() {
                 setActiveItem={setActiveMenuBar}
                 key={activeNavbar}
             />
+
+              <div className="w-full px-4 py-6">
+        {renderMenuContent()}
+      </div>
 
         </div>
     );
