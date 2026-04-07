@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const ReportTable = ({ data }) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [rowsPerPage, setRowsPerPage] = useState(15);
+    const [rowsPerPage] = useState(15);
 
     const headers = [
         "Financial Year", "IRC No", "Importer Name", "Importer Address",
