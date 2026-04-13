@@ -81,7 +81,7 @@ export default function Login() {
             </div>
 
             {isWrongCredential && (
-              <p className="text-red-600 text-[12px] mt-1">{errorMessage}</p>
+              <p id="login-error" className="text-red-600 text-[12px] mt-1">{errorMessage}</p>
             )}
           </div>
         </div>
